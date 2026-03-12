@@ -1,0 +1,39 @@
+.summary {
+  display: grid;
+  gap: 18px;
+}
+
+.summary-header h2 {
+  margin: 0;
+  font-size: 1.5rem;
+}
+
+.summary-header p {
+  margin: 6px 0 0;
+  color: var(--text-light);
+}
+
+.summary-list {
+  display: grid;
+  gap: 12px;
+}
+
+.summary-item {
+  display: flex;
+  justify-content: space-between;
+  gap: 16px;
+  padding-bottom: 12px;
+  border-bottom: 1px solid #f0ebff;
+}
+
+.summary-total {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 16px 18px;
+  border-radius: 16px;
+  background: var(--primary-light);
+  color: var(--primary-dark);
+  font-weight: 800;
+  font-size: 1.05rem;
+}
