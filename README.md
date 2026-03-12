@@ -41,7 +41,11 @@ http://localhost:5173
 - BookingForm
 - PriceSummary
 
+### Estratégias
+
 Os dados das acomodações foram centralizados em um módulo para facilitar manutenção futura.
-O cálculo percorre cada noite da estadia para aplicar corretamente regras de fim de semana.
+O cálculo percorre cada noite da estadia para aplicar corretamente regras de fim de semana, que foram separadas em um utilitario(parseDate) para facilitar o calculo do fim de semana.
+Incluí um utilitário para separar a moeda utilizada, visando uma escalabilidade para outras moedas
+Estruturei o projeto para que a lógica atual em frontend possa ser facilmente migrada para uma API Rails, e também preparei uma versão mockada de backend para simular esse fluxo de integração.
 
 Arquitetura simples inspirada em aplicações SaaS reais, separando dados, lógica de negócio e componentes.
