@@ -41,17 +41,18 @@ export function calculateTarifario({ checkIn, checkOut, accommodation }) {
     dailyTotal += price;
   }
 
-  let total = dailyTotal + accommodation.cleaningFee;
-
-  if (nights > 7) {
-    total *= 0.9;
-  }
+  const subtotal = dailyTotal + accommodation.cleaningFee;
+  const discountApplied = nights > 7;
+  const discountAmount = discountApplied ? subtotal * 0.1 : 0;
+  const total = discountApplied ? subtotal * 0.9 : subtotal;
 
   return {
     nights,
     dailyRate: accommodation.basePrice,
     dailyTotal,
     cleaningFee: accommodation.cleaningFee,
+    discountApplied,
+    discountAmount,
     total,
   };
 }
