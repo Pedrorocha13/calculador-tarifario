@@ -1,6 +1,6 @@
 import { parseDate } from "../utils/parseDate";
 
-export function calculateTarifario({ checkIn, checkOut, accommodation }) {
+export function calculateTarifario({ checkIn, checkOut, accommodation /*,adults*/ }) {
   if (!checkIn || !checkOut) {
     throw new Error("Informe check-in e check-out.");
   }
@@ -8,7 +8,11 @@ export function calculateTarifario({ checkIn, checkOut, accommodation }) {
   if (!accommodation) {
     throw new Error("Acomodação inválida.");
   }
-
+  /*
+  if (!adults || adults < 1) {
+    throw new Error("Informe pelo menos 1 adulto.");
+  }
+  */
   const start = parseDate(checkIn);
   const end = parseDate(checkOut);
 
@@ -33,6 +37,13 @@ export function calculateTarifario({ checkIn, checkOut, accommodation }) {
     const isWeekend = day === 0 || day === 6;
 
     let price = accommodation.basePrice;
+
+    /*
+    const extraAdults = Math.max(adults - accommodation.includedAdults, 0);
+    const extraAdultsTotal = extraAdults * accommodation.extraAdultPrice;
+
+    price += extraAdultsTotal;
+    */
 
     if (isWeekend) {
       price *= 1.2;

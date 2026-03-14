@@ -3,12 +3,20 @@ export const accommodations = {
         name: "Suíte Jardim",
         basePrice: 300,
         minNights: 2,
+        /*
+        extraAdultPrice: 80,
+        minNights: 2,
+        */
         cleaningFee: 80
     },
     chaleFamilia: {
         name: "Chalé Família",
         basePrice: 450,
         minNights: 2,
+        /*
+        extraAdultPrice: 100,
+        minNights: 2,
+        */
         cleaningFee: 100
     }
 };
