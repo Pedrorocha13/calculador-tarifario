@@ -26,6 +26,16 @@ export default function PriceSummary({ result, accommodation }) {
           <span>Taxa de limpeza</span>
           <strong>{formatCurrency(result.cleaningFee)}</strong>
         </div>
+        
+        {result.discountApplied && (
+          <div className="summary-item summary-item--discount">
+            <span>Desconto (10% — estadia longa)</span>
+            <strong className="discount-value">
+              −{formatCurrency(result.discountAmount)}
+            </strong>
+          </div>
+        )}
+            
       </div>
 
       <div className="summary-total">
